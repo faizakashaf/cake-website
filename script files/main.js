@@ -33,3 +33,37 @@ const blurHeader  = () => {
                        : header.classList.remove("blur_header")
 }
 window.addEventListener("scroll",blurHeader)
+
+/* ----- Show Scroll up   ---- */
+const showScroll  = () => {
+    const scrollUp = document.getElementById("scroll-up");
+    this.scrollY >= 350 ? scrollUp.classList.add("show_scroll")
+                       : scrollUp.classList.remove("show_scroll")
+}
+window.addEventListener("scroll",showScroll)
+
+/* ----- Scroll Link Active  ----- */
+
+const sectionsWithId = document.querySelectorAll("section[id]");
+
+const scrollLinkActive = () => {
+    const scrollDown = window.scrollY
+    sectionsWithId.forEach(current => {
+    const sectionHeight = current.offsetHeight,
+    
+          sectionTop = current.offsetTop - 58,
+          sectionId = current.getAttribute('id'),          
+         sectionClass = document.querySelector('.nav_menu a[href="#' + sectionId + '"]')
+
+    if(scrollDown >= sectionTop && scrollDown < sectionTop + sectionHeight ){
+        sectionClass.classList.add("active-link");
+        sectionClass.classList.remove("item");
+    }
+    else{
+        sectionClass.classList.remove("active-link");
+        sectionClass.classList.add("item");
+       }
+    });
+};
+window.addEventListener('scroll', scrollLinkActive)
+

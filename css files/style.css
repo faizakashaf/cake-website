@@ -10,7 +10,7 @@
     --title-span-color:  hsl(31, 95%, 49%);
     --button-color:  hsl(31, 79%, 59%);
     --button-hover-color:  hsl(31, 68%, 55%);
-    --text-color-light: hsl(0, 0%, 65%);
+    --scroll-bar-thumb: hsl(0, 10%, 86%);
     --white-color:hsl(0, 0%, 100%);
     --side-menu-color: hsl(0, 0%, 10%);
    --black-color : hsl(0, 0%, 0%);
@@ -104,6 +104,7 @@
   .grid {
     display: grid;
     gap: 1.5rem;
+  
   }
   
   .section {
@@ -194,7 +195,7 @@ color: var(--first-color-alt)
 .nav_list_item{
 display: flex;
 flex-direction: column;
-row-gap: 5vw;
+row-gap: 7vw;
 }
 .nav_close,
 .nav_img1,
@@ -240,12 +241,14 @@ transition: background-color 0.3s ease;
 }
 
 .nav_list_item .list_item .item{
-    color: var(--side-menu-color);
-    font-weight: var(--font-bold);
+    font-weight: var(--font-semi-bold);
+    color: var(--black-color);
 }
-.nav_list_item .list_item .item:hover{
-    color: var(--first-color-alt);
-    transition: .3s ease-in;
+
+.active-link{
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+  
 }
   /* --------Home Section ------ */
 #home{
@@ -304,8 +307,8 @@ word-spacing: .9vw;
 .about-img1{
   width: 80px;
   position: absolute;
-  bottom: 1rem;
-  right: 6rem;
+  bottom: .7rem;
+  right: 3rem;
   rotate: -6deg;
 }
 .about-img2{
@@ -473,3 +476,81 @@ margin-bottom: 1.25rem;
   text-align: center;
 }
 
+/* Sroll Bar */
+::-webkit-scrollbar{
+  width: .6rem;
+  background-color: var(--white-color);
+}
+::-webkit-scrollbar-thumb{
+  background-color: var(--scroll-bar-thumb);
+}
+
+/* Sroll Up */
+.scrollup{
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--scroll-bar-thumb);
+  color: var(--first-color-alt);
+  display: inline-flex;
+  box-shadow:0 6px 24px hsla(0,0%,0%,.25);
+  padding: 6px;
+  font-size: 1.5rem;
+  font-weight: var(--font-semi-bold);
+  z-index: var(--z-tooltip);
+  transition:bottom .4s , transform .4s ;
+}
+.scrollup:hover{
+  transform: translateY(-.5rem);
+}
+.show_scroll{
+  bottom: 2.5rem;
+}
+
+/*========= Breakpoints ========= */
+/* For small devices */
+@media screen and (max-width:340px){
+ .container{
+  margin-inline: 1rem;
+ }
+
+  .nav_logo{
+    padding: .8vw .2vw; 
+  }
+
+  .nav .nav_logo .cake_logo{
+    width: 45px;
+    margin-left: 0;
+  }
+  .nav_logo a{
+    margin-left: .6vw;
+  }
+
+  .section_title{
+    margin-bottom: 2.5rem;
+  }
+  .about_description{
+    width: 100%;
+  }
+  .home_title{
+    font-size: 2.5rem;
+ }
+ .about-img1{
+  width: 60px;
+  right: .5rem;
+  rotate: -7deg;
+}
+.top_pick_container{
+  grid-template-columns: 190px;
+  justify-content: center;
+}
+.top_picks_card .third{
+  width: 170px;
+  top: -3.5rem;
+  right: 3rem;
+}
+.footer_content{
+  grid-template-columns: max-content;
+}
+
+}
