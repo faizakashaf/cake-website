@@ -106,8 +106,7 @@
   }
   
   .section {
-    padding-block: 4rem 1rem;
-
+    padding-block: 3rem 1rem;
   }
   
   .section_title {
@@ -271,7 +270,6 @@ span{
 }
 .home_image{
     max-width: 400px;
-    height: 400px;
     justify-self: center;
 }
 .button{
@@ -450,6 +448,7 @@ margin-bottom: 1.25rem;
 .footer_list{
   display: grid;
   row-gap: .75rem;
+
 }
 .footer_info{
   font-style: normal;
@@ -507,9 +506,9 @@ margin-bottom: 1.25rem;
 
 /*========= Breakpoints ========= */
 /* For small devices */
-@media screen and (max-width: 375px){
+@media screen and (max-width: 360px){
  .container{
-  margin-inline: 1rem;
+  margin-inline: .5rem;
  }
 
   .nav_logo{
@@ -535,16 +534,16 @@ margin-bottom: 1.25rem;
 .list_item{
   padding: .3rem .6rem;
 }
-
-  .section_title{
-    margin-bottom: 2.5rem;
-  }
-  .about_description{
-    width: 100%;
-  }
   .home_title{
     font-size: 2.5rem;
  }
+ #about{
+  padding-block: 2rem 1rem;
+}
+  .about_description{
+    width: 100%;
+  }
+ 
  .about-img1{
   width: 60px;
   right: .5rem;
@@ -558,6 +557,9 @@ margin-bottom: 1.25rem;
   width: 170px;
   top: -3.5rem;
   right: 3rem;
+}
+.footer{
+  padding-left: 1.1rem;
 }
 .footer_content{
   grid-template-columns: max-content;
