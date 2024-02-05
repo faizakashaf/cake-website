@@ -78,6 +78,6 @@ const sr = ScrollReveal({
         delay : 300,
         //  reset : true
     })
-sr.reveal('.home_data, .about-img2, .about_data, .about-data, .visit_data')
+sr.reveal('.home_data, .about-img2, .about_data, .about-data, .visit_data, .gallery_container')
 sr.reveal('.top_picks_card .top_img',{interval: 100,rotate:{z:10},distance:0})
 sr.reveal('.footer_container',{scale:1})
